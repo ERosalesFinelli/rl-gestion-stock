@@ -1,0 +1,19 @@
+# Configuración común a todos los experimentos.
+# Nada de estos números está escrito a mano dentro del código.
+entorno:
+  id: "GymInvMgmt/Serial-v0"
+  dias_por_episodio: 30          # el entorno corta solo a los 30 días (truncamiento)
+
+acciones:
+  # 5 niveles de pedido para cada uno de los 3 eslabones -> 5*5*5 = 125 acciones.
+  # La demanda media es de unas 20 unidades al día.
+  niveles: [0, 10, 20, 40, 80]
+
+semillas:
+  entrenamiento: [0, 1, 2, 3, 4]       # 5 semillas
+  evaluacion_inicio: 1000              # los episodios de evaluación usan semillas 1000, 1001, ...
+  episodios_evaluacion: 50
+
+baselines:
+  base_stock:
+    niveles_objetivo: [200, 100, 100]  # tienda, distribuidor, fábrica (ver README)

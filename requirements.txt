@@ -1,0 +1,11 @@
+# Versiones exactas con las que se han hecho los experimentos (Python 3.12).
+# Si en tu ordenador "pip freeze" muestra otra versión de alguna, cámbiala aquí.
+gymnasium==1.4.0
+gym-invmgmt==0.2.1
+numpy==2.5.3
+PyYAML==6.0.3
+pandas==3.0.5
+matplotlib==3.11.2
+imageio==2.38.1
+# Se añadirá al empezar el DQN (versión exacta tras instalarlo):
+# torch==X.Y.Z
