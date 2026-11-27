@@ -25,3 +25,11 @@ tramos:
   stock_distribuidor: [0, 40, 100, 200]
   stock_fabrica: [0, 100, 200, 400]
   pedidos_en_camino: [50, 120, 200, 300]
+
+q_learning:
+  alfa: 0.1
+  gamma: 0.99
+  eps_inicial: 1.0
+  eps_final: 0.05
+  decaimiento: 0.999
+  episodios: 3000

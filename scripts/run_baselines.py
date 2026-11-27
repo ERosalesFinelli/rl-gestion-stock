@@ -21,10 +21,11 @@ ini = config["semillas"]["evaluacion_inicio"]
 n = config["semillas"]["episodios_evaluacion"]
 
 filas = []
-for nombre in ["azar", "base_stock"]:
-    # Los baselines usan el entorno original (pedidos continuos).
-    env = crear_entorno(config, discreto=False)
-    if nombre == "azar":
+for nombre in ["azar", "azar_125", "base_stock"]:
+    # "azar" y "base_stock" usan el entorno original (pedidos continuos).
+    # "azar_125" usa las mismas 125 acciones que la libreta (comparación justa).
+    env = crear_entorno(config, discreto=(nombre == "azar_125"))
+    if nombre in ("azar", "azar_125"):
         agente = AgenteAzar(env, semilla=ini)
     else:
         agente = BaseStock(env, config["baselines"]["base_stock"]["niveles_objetivo"])
